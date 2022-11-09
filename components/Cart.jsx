@@ -11,7 +11,12 @@ import getStripe from '../lib/getStripe'
 const Cart = () => {
   const cartRef = useRef();
   const {totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove} = useStateContext();
-  
+  const disabled = true;
+
+  const disabledMsg = () =>{
+    toast.error('Transactions are currently disabled')
+  }
+
   const handleCheckout = async () => {
     const stripe = await getStripe();
 
@@ -85,7 +90,7 @@ const Cart = () => {
               <h3>${totalPrice}</h3>
             </div>
             <div className='btn-container'>
-              <button type='button' className='btn' onClick={handleCheckout}>Checkout with Stripe</button>
+              <button type='button' className='btn' onClick={disabled ? disabledMsg : handleCheckout}>Checkout with Stripe</button>
             </div> 
           </div>
         )}
