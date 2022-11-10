@@ -35,9 +35,9 @@ export const StateContext = ({children}) => {
    /** This will persist the quantity **/
 
    useEffect(() => {
-      const cartQuantity = JSON.parse(localStorage.getItem('quantity'));
-      if (cartQuantity) {
-         setTotalQuantities(cartQuantity);
+      const qtyData = JSON.parse(localStorage.getItem('quantity'));
+      if (qtyData) {
+         setTotalQuantities(qtyData);
       }
    }, []);
 
@@ -50,9 +50,9 @@ export const StateContext = ({children}) => {
       /** This will persist the quantity **/
 
       useEffect(() => {
-        const totalPrice = JSON.parse(localStorage.getItem('total'));
-        if (totalPrice) {
-           setTotalPrice(totalPrice);
+        const priceData = JSON.parse(localStorage.getItem('total'));
+        if (priceData) {
+           setTotalPrice(priceData);
         }
      }, []);
   
@@ -91,6 +91,7 @@ export const StateContext = ({children}) => {
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity);
         setTotalQuantities((prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity);
         setCartItems(newCartItems);
+        localStorage.clear();
     }
     
     const toggleCartItemQuantity = (id, value) => {
