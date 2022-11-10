@@ -5,14 +5,62 @@ const Context = createContext();
 
 
 export const StateContext = ({children}) => {
+    const initialCart = [];
+    const initialQuantity = 0;
+    const initialPrice = 0;
     const [showCart, setShowCart] = useState(false);
-    const [cartItems, setCartItems] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [totalQuantities, setTotalQuantities] = useState(0);
+    const [cartItems, setCartItems] = useState(initialCart);
+    const [totalPrice, setTotalPrice] = useState(initialPrice);
+    const [totalQuantities, setTotalQuantities] = useState(initialQuantity);
     const [qty, setQty] = useState(1);
-
+    
     let foundProduct;
     let index;
+
+   /** This will persist the cart items **/
+
+   useEffect(() => {
+      const cartData = JSON.parse(localStorage.getItem('cart'));
+      if (cartData) {
+         setCartItems(cartData);
+      }
+   }, []);
+
+   useEffect(() => {
+      if (cartItems !== initialCart) {
+         localStorage.setItem('cart', JSON.stringify(cartItems));
+      }
+   }, [cartItems]);
+
+   /** This will persist the quantity **/
+
+   useEffect(() => {
+      const cartQuantity = JSON.parse(localStorage.getItem('quantity'));
+      if (cartQuantity) {
+         setTotalQuantities(cartQuantity);
+      }
+   }, []);
+
+   useEffect(() => {
+      if (totalQuantities !== initialQuantity) {
+         localStorage.setItem('quantity', JSON.stringify(totalQuantities));
+      }
+   }, [totalQuantities]);
+
+      /** This will persist the quantity **/
+
+      useEffect(() => {
+        const totalPrice = JSON.parse(localStorage.getItem('total'));
+        if (totalPrice) {
+           setTotalPrice(totalPrice);
+        }
+     }, []);
+  
+     useEffect(() => {
+        if (totalPrice !== initialPrice) {
+           localStorage.setItem('total', JSON.stringify(totalPrice));
+        }
+     }, [totalPrice]);
 
     const onAdd = (product, quantity) => {
         const checkProductInCart = cartItems.find((item) => item._id === product._id);
