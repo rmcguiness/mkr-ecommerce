@@ -20,7 +20,7 @@ a {
 max-width: 1400px; 
 margin: auto;
 width: 100%;
-overflow: hidden;
+z-index: 0;
 }
 .layout{
   padding: 10px;
@@ -136,17 +136,17 @@ overflow: hidden;
   height: 500px;
   line-height: 0.9; 
   width: 100%;
-  z-index: -10;
 
 }
 .hero-banner-container .beats-solo{
   font-size: 20px;
   color:#ffffff;
-  z-index:10000 !important;
+  position: relative;
+  z-index:1 !important;
 }
 
 .hero-banner-container button{
-   border-radius: 15px;
+  border-radius: 15px;
   padding: 10px 16px;
   background-color: #f02d34;
   color: white;
@@ -155,14 +155,16 @@ overflow: hidden;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  z-index:10000 !important;
+  position: relative;
+  z-index:1 !important;
 }
 
 .hero-banner-container h3{
   font-size: 4rem;
   margin-top: 4px;
-  z-index:10000 !important;
   color: #FFF;
+  position: relative;
+  z-index:1 !important;
 }
 .hero-banner-container h1{
   color: white;
@@ -176,7 +178,7 @@ overflow: hidden;
   right:30%;
   width: 450px;
   height: 450px;
-  z-index: -1;
+  z-index: 0;
 }
 
 .desc{
@@ -226,7 +228,6 @@ flex-direction: column;
   color: white;
   width: 100%;
   margin-top: 120px;
-  z-index: -10;
 }
 .banner-desc{
   display: flex ;
@@ -242,14 +243,20 @@ flex-direction: column;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
+  position: relative;
+  z-index: 1 !important;
 }
 .banner-desc .left h3{
   font-weight: 900;
   font-size: 80px;
   margin-left: 25px;
+  position: relative;
+  z-index: 1;
 }
 .banner-desc .left p{
   margin:18px;
+  position: relative;
+  z-index: 1;
 }
 .footer-banner-image{
   position: absolute;
@@ -258,7 +265,6 @@ flex-direction: column;
   left: 8%; */
   top: -8%;
   left: 25%;
-  z-index: -1;
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -266,9 +272,13 @@ flex-direction: column;
 .banner-desc .right h3{
   font-weight: 800;
   font-size: 60px;
+  position: relative;
+  z-index: 1;
 }
 .banner-desc .right p{
   font-size: 18px;
+  position: relative;
+  z-index: 1;
 }
 .banner-desc .right .company-desc{
   font-size: 14px;
@@ -676,7 +686,6 @@ margin-top: 160px;
   }
   .hero-banner-container button{
     margin-top: 90px;
-    z-index: 10000;
   }
   .desc{
    bottom: 60px;
