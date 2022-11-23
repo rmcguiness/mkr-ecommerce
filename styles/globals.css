@@ -20,7 +20,7 @@ a {
 max-width: 1400px; 
 margin: auto;
 width: 100%;
-
+overflow: hidden;
 }
 .layout{
   padding: 10px;
@@ -130,17 +130,21 @@ width: 100%;
 
 .hero-banner-container{
   padding: 100px 40px;
-  background-color: #dcdcdc;
+  background-color: #a7a7a7;
   border-radius: 15px;
   position: relative;
   height: 500px;
   line-height: 0.9; 
   width: 100%;
+  z-index: -10;
 
 }
 .hero-banner-container .beats-solo{
   font-size: 20px;
+  color:#ffffff;
+  z-index:10000 !important;
 }
+
 .hero-banner-container button{
    border-radius: 15px;
   padding: 10px 16px;
@@ -157,6 +161,8 @@ width: 100%;
 .hero-banner-container h3{
   font-size: 4rem;
   margin-top: 4px;
+  z-index:10000 !important;
+  color: #FFF;
 }
 .hero-banner-container h1{
   color: white;
@@ -170,8 +176,8 @@ width: 100%;
   right:30%;
   width: 450px;
   height: 450px;
+  z-index: -1;
 }
-
 
 .desc{
 position: absolute;
@@ -185,9 +191,9 @@ flex-direction: column;
 
 }
 .desc p{
-  color: #5f5f5f;
+  color: #ffffff;
   font-weight: 100;
-text-align: end;
+  text-align: end;
 }
 .desc h5{
   margin-bottom: 12px;
@@ -211,7 +217,7 @@ text-align: end;
   font-weight: 200;
 }
 .footer-banner-container{
-  padding: 100px 40px;
+  padding: 60px 40px;
   background-color: #f02d34;
   border-radius: 15px;
   position: relative;
@@ -220,6 +226,7 @@ text-align: end;
   color: white;
   width: 100%;
   margin-top: 120px;
+  z-index: -10;
 }
 .banner-desc{
   display: flex ;
@@ -251,6 +258,7 @@ text-align: end;
   left: 8%; */
   top: -8%;
   left: 25%;
+  z-index: -1;
 }
 .banner-desc .right{
   line-height: 1.4;
@@ -620,23 +628,20 @@ margin-top: 160px;
 }
 
 @media screen and (max-width:800px) {
-  .hero-banner-container{
-    height: 560px;
-  }
   .hero-banner-image{
     width: 77%;
     height: 62%;
-    top: -2%;
-    right: -6%;
+    top: 0%;
+    right: -2%;
   }
   .footer-banner-container{
     height: 560px;
-    margin-top: 80px;
+    margin-top: 20px;
   }
   .footer-banner-image{
     width: 77%;
-    left: 30%;
-    top: 6%;
+    left: 25%;
+    top: 4%;
     height: 56%
   }
   .banner-desc .left h3{
@@ -648,7 +653,7 @@ margin-top: 160px;
     margin:18px;
   }
   .banner-desc .right h3{
-    font-size: 45px;
+    font-size: 40px;
   }
   .banner-desc .right p{
     font-size: 18px;
