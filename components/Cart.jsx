@@ -11,7 +11,7 @@ import getStripe from '../lib/getStripe'
 const Cart = () => {
   const cartRef = useRef();
   const {totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity, onRemove} = useStateContext();
-  const disabled = true;
+  const disabled = false;
 
   const disabledMsg = () =>{
     toast.error('Transactions are currently disabled')
@@ -85,6 +85,9 @@ const Cart = () => {
         </div>
         {cartItems.length >= 1 && (
           <div className='cart-bottom'>
+            {!disabled && (
+              <div><h5 style={{color:'red', width:'fit-content', margin:'auto'}}>Warning: Payments will not be processed</h5></div>
+            )}
             <div className='total'>
               <h3>Subtotal: </h3>
               <h3>${totalPrice}</h3>
