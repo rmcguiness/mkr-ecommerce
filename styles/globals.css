@@ -363,14 +363,16 @@ padding: 20px 10px;
 }
 .product{
   display: flex;
- gap: 30px;
+  gap: 30px;
+  justify-content: space-between;
   padding: 20px;
+  padding-left: 0px;
 }
 .product .cart-product-image{
   width:180px ;
   height: 150px;
-    border-radius: 15px;
- background-color: #ebebeb;
+  border-radius: 15px;
+  background-color: #ebebeb;
 }
 .item-desc .flex{
   display: flex;
