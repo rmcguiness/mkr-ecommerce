@@ -267,6 +267,8 @@ flex-direction: column;
   left: 25%;
 }
 .banner-desc .right{
+  width: 50%;
+  justify-content: left;
   line-height: 1.4;
 }
 .banner-desc .right h3{
@@ -637,6 +639,10 @@ margin-top: 160px;
   margin-top: 10px;
 }
 
+.description{
+  width: 50%;
+}
+
 @media screen and (max-width:800px) {
   .hero-banner-image{
     width: 77%;
@@ -661,6 +667,10 @@ margin-top: 160px;
   }
   .banner-desc .left p{
     margin:18px;
+  }
+  .banner-desc .right{
+    width: 50%;
+    justify-content: left;
   }
   .banner-desc .right h3{
     font-size: 40px;
