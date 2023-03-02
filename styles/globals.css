@@ -267,6 +267,7 @@ flex-direction: column;
   left: 25%;
 }
 .banner-desc .right{
+  width: 50%;
   line-height: 1.4;
 }
 .banner-desc .right h3{
@@ -361,14 +362,16 @@ padding: 20px 10px;
 }
 .product{
   display: flex;
- gap: 30px;
+  gap: 30px;
+  justify-content: space-between;
   padding: 20px;
+  padding-left: 0px;
 }
 .product .cart-product-image{
   width:180px ;
   height: 150px;
-    border-radius: 15px;
- background-color: #ebebeb;
+  border-radius: 15px;
+  background-color: #ebebeb;
 }
 .item-desc .flex{
   display: flex;
@@ -637,6 +640,10 @@ margin-top: 160px;
   margin-top: 10px;
 }
 
+.description{
+  width: 50%;
+}
+
 @media screen and (max-width:800px) {
   .hero-banner-image{
     width: 77%;
@@ -661,6 +668,9 @@ margin-top: 160px;
   }
   .banner-desc .left p{
     margin:18px;
+  }
+  .banner-desc .right{
+    width: 50%;
   }
   .banner-desc .right h3{
     font-size: 40px;
