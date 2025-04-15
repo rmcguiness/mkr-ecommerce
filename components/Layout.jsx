@@ -1,26 +1,29 @@
-import React from 'react'
-import Head from 'next/head'
+import React from 'react';
+import Head from 'next/head';
 
-import NavBar from './NavBar'
-import Footer from './Footer'
+import NavBar from './NavBar';
+import Footer from './Footer';
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
-    <div className='layout'>
+    <div className="layout">
       <Head>
+        <script
+          defer
+          data-domain="mkr-ecommerce.vercel.app"
+          src="https://plausible.io/js/script.js"
+        ></script>
         <title>MKR Store</title>
       </Head>
       <header>
-        <NavBar/>
+        <NavBar />
       </header>
-      <main className='main-container'>
-        {children}
-      </main>
+      <main className="main-container">{children}</main>
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
