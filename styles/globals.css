@@ -5,8 +5,13 @@ body, * {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   box-sizing: border-box;
-
 }
+
+body {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }
@@ -21,6 +26,8 @@ max-width: 1400px;
 margin: auto;
 width: 100%;
 z-index: 0;
+background-color: #ffffff;
+min-height: 100vh;
 }
 .layout{
   padding: 10px;
@@ -219,11 +226,11 @@ flex-direction: column;
   font-weight: 200;
 }
 .footer-banner-container{
-  padding: 60px 40px;
+  padding: 40px 20px;
   background-color: #f02d34;
   border-radius: 15px;
   position: relative;
-  height: 400px;
+  height: min-content;
   line-height: 1; 
   color: white;
   width: 100%;
@@ -239,7 +246,7 @@ flex-direction: column;
   background-color: white;
   color: red;
   border: none;
-  margin-top: 40px;
+  margin-top: 10px;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
@@ -269,6 +276,10 @@ flex-direction: column;
 .banner-desc .right{
   width: 50%;
   line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
 }
 .banner-desc .right h3{
   font-weight: 800;
@@ -535,7 +546,7 @@ padding: 30px 65px;
   background-color: #f02d34;
   color: white;
   border: none;
-  margin-top: 40px;
+  margin-top: 10px;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
@@ -652,7 +663,7 @@ margin-top: 160px;
     right: -2%;
   }
   .footer-banner-container{
-    height: 560px;
+    height: min-content;
     margin-top: 20px;
   }
   .footer-banner-image{
@@ -670,7 +681,7 @@ margin-top: 160px;
     margin:18px;
   }
   .banner-desc .right{
-    width: 50%;
+    width: 90%;
   }
   .banner-desc .right h3{
     font-size: 40px;
@@ -788,4 +799,8 @@ margin-top: 160px;
   width: 300px;
   margin: auto;
 }
+}
+
+html.in-iframe {
+  background-color: #ffffff;
 }
